@@ -1,3 +1,23 @@
+/*
+Date: 5/23/2017
+Problem Statement: Create a bullet hell game for the console
+1. Create a time consistent game loop that tries to hold a consistent fps
+2. Develop a class to manage the game and its loops ad updates
+3. Design a way to display the game fast and efficiently with colors
+4. Make screens that hold data for the various aspects, such as colors and characters
+5. Add objects that hold x & y values that can be stored in a vector and displayed on the display
+6. Adjust ways for such objects to shoot bullets
+7. Manage functionality to check for collisions between the player and the bullets
+8. Expand the player to allow input from the keyboard for movement and shooting functionality
+9. Erupt new mathematical formulas to solve the gridded display with real angled 2 dimensional space travel
+10. Evolve the game for multiple bullet patterns and a menu for them
+11. Apply collision to create incredible and amazing death effects
+12. Generate files with the all new file generator to bring the score and name of the best player straight to your hands
+13. Establish your (my) game as properly optimized and bug free, and clean & commented for just myself to read in awe
+14. Reinforce your chance of success with everything you just basically did
+15. Invent a creative title for your project to shoe on the title bar
+*/
+
 #include <iostream>
 #include <thread>
 #include <windows.h> //because screw linux users
