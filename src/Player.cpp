@@ -22,6 +22,7 @@ void Player::shoot() {
         fireDelay = maxFireDelay;
     }
 }
+
 void Player::shoot(Bullet* bullet, bool local) {
     if (local) {
         bullet->petX(getGX());

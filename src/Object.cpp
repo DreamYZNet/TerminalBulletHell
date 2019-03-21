@@ -13,11 +13,13 @@ double Object::getGX() {
         return parent->getGX();
     return getX();
 }
+
 double Object::getGY() {
     if (parent != 0)
         return parent->getGY();
     return getY();
 }
+
 double Object::getX()        { return x;            }
 double Object::getY()        { return y;            }
 double Object::getWidth()    { return width;        }

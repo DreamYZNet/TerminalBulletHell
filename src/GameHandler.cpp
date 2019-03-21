@@ -2,7 +2,7 @@
 #include "GameHandler.h"
 using namespace std;
 
-//resolutions: laptop:120x30 school:80x24
+//resolutions: laptop:120x30 desktop:80x24
 GameHandler::GameHandler(GameHandler** existence_): display(80, 24), stage(78, 22), boss(stage), player(stage), p1(player), existence(existence_) {
     chooseSpell();
     load();
@@ -77,6 +77,7 @@ void GameHandler::updateSpell() {
         }break;
     }
 }
+
 //check collisions between player and various bullets
 void GameHandler::collide() {
     std::vector<Object*> objects = stage.getObjects();
@@ -105,6 +106,7 @@ void GameHandler::collide() {
         display.setDefBColor(0);
     }
 }
+
 bool GameHandler::isColliding(Object& obj1, Object& obj2) {
     if ((int)obj1.getGHX() <= (int)(obj2.getGHX()+obj2.getHWidth()-1) && (int)obj2.getGHX() <= (int)(obj1.getGHX()+obj1.getHWidth()-1)
             && (int)obj1.getGHY() <= (int)(obj2.getGHY()+obj2.getHHeight()-1) && (int)obj2.getGHY() <= (int)(obj1.getGHY()+obj1.getHHeight()-1)) {
@@ -171,6 +173,7 @@ void GameHandler::load() {
     playerName = temp;
     fin.close();
 }
+
 void GameHandler::save() {
     std::fstream fin;
     try{
@@ -185,6 +188,7 @@ void GameHandler::save() {
     fin.write(temp, length);
     fin.close();
 }
+
 void GameHandler::initSave() {
     std::fstream fin;
     try{
@@ -218,6 +222,7 @@ void GameHandler::gameover() {
     }
     kys();
 }
+
 //prompt for text
 string GameHandler::textField (int max, string text) {//bugs abound
     cout << text;

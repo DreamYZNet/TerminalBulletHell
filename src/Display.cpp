@@ -57,7 +57,7 @@ void Display::showConsoleCursor(bool enabled) {
 
 void Display::flushInputBuffer() { //various attempts at clearing buffer
     //std::cin.clear();
-	std::cin.ignore(255, '\n'); //why does this pause?
+	std::cin.ignore(255, '\n');
 	//std::cin.sync();
 	//std::cout << "a";
     //fflush(stdin);
@@ -74,18 +74,23 @@ int Display::getColor(int fg, int bg) {
         fg = bg;
     return bg*16 + fg;
 }
+
 void Display::setColor(int color) {
     SetConsoleTextAttribute(handle, color);
 }
+
 void Display::setColor(int fg, int bg) {
     setColor(getColor(fg,bg));
 }
+
 void Display::print(std::string str) {
     std::cout << str;
 }
+
 void Display::print(char c) {
     std::cout << c;
 }
+
 template <typename T>
 void Display::swap (T& thing1, T& thing2) {
     T temp = thing1;
@@ -104,6 +109,7 @@ void Display::setGlitch (bool b)      { glitch = b;        }
 void Display::draw (Screen &scr, int x, int y) {
 	screen->draw(scr, x, y, true);
 }
+
 void Display::set (int x, int y, char c) {
 	screen->set(x, y, c);
 }

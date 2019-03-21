@@ -10,14 +10,14 @@ double PhysicsMath::getAngledY(double angle, double length) {
 }
 
 double PhysicsMath::getRotateX(double angle, double length, double degrees) {
-    //70% sure there is a more efficient way to calculate this
+    //TODO: 70% sure there is a more efficient way to calculate this
     double x = getAngledX(angle-180, length);
     x += getAngledX(angle+degrees, length);
     return x;
 }
 
 double PhysicsMath::getRotateY(double angle, double length, double degrees) {
-    //70% sure there is a more efficient way to calculate this
+    //TODO: 70% sure there is a more efficient way to calculate this
     double y = getAngledY(angle-180, length);
     y += getAngledY(angle+degrees, length);
     return y;

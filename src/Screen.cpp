@@ -54,6 +54,7 @@ void Screen::fill (char c){
 		}
 	}
 }
+
 void Screen::fillFColor (int fg){
 	for (int i = 0; i < height; i++) {
 		for (int j = 0; j < width; j++) {
@@ -61,6 +62,7 @@ void Screen::fillFColor (int fg){
 		}
 	}
 }
+
 void Screen::fillBColor (int bg){
 	for (int i = 0; i < height; i++) {
 		for (int j = 0; j < width; j++) {
@@ -83,21 +85,25 @@ void Screen::setPriority(int p) {
 		}
 	}
 }
+
 bool Screen::isFTransparent(int x, int y) {
     if (screen[y][x] == 0 || fColor[y][x] == -2)
         return true;
     return false;
 }
+
 bool Screen::isBTransparent(int x, int y) {
     if (bColor[y][x] == -2)
         return true;
     return false;
 }
+
 bool Screen::isTransparent(int x, int y) {
     if (isBTransparent(x,y) && isFTransparent(x,y))
         return true;
     return false;
 }
+
 void Screen::set(int x, int y, char value) {
     if (x >= 0 && x < width && y >= 0 && y < height) {
         if (screen[y][x] != value) {
@@ -105,14 +111,17 @@ void Screen::set(int x, int y, char value) {
         }
     }
 }
+
 void Screen::set(int x, int y, char value, int fg) { //inneficient, x y boundaries checked multiple times
     set(x, y, value);
     setFColor(x, y, fg);
 }
+
 void Screen::set(int x, int y, char value, int fg, int bg) {
     set(x, y, value, fg);
     setBColor(x, y, bg);
 }
+
 void Screen::setFColor(int x, int y, int value) {
     if (x >= 0 && x < width && y >= 0 && y < height) {
         if (fColor[y][x] != value) {
@@ -120,6 +129,7 @@ void Screen::setFColor(int x, int y, int value) {
         }
     }
 }
+
 void Screen::setBColor(int x, int y, int value) {
     if (x >= 0 && x < width && y >= 0 && y < height) {
         if (bColor[y][x] != value) {
